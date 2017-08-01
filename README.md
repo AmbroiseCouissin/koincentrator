@@ -11,6 +11,7 @@ All experiments will have a set of SDKs.
 throw new NotImplementedException();
 
 :x: integration with Cryptonator
+
 :x: integration with CryptoCompare
 
 ## TRADING MODELS
