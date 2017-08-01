@@ -10,9 +10,8 @@ All experiments will have a set of SDKs.
 ## MARKET DATA
 throw new NotImplementedException();
 
-:x: integration with Cryptonator
-
-:x: integration with CryptoCompare
+- [ ] integration with Cryptonator
+- [ ] integration with CryptoCompare
 
 ## TRADING MODELS
 throw new NotImplementedException();
