@@ -8,6 +8,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using KoinCentrator.MarketData.Providers;
+using KoinCentrator.MarketData.Providers.Cryptonator;
+using KoinCentrator.MarketData.Providers.CryptoCompare;
+using System.Reflection;
+using KoinCentrator.MarketData.Controllers;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace KoinCentrator.Startup
 {
@@ -16,12 +22,29 @@ namespace KoinCentrator.Startup
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "koincentrator", Version = "v1" });
+            });
+
+            services.AddMvc()
+                .AddApplicationPart(Assembly.Load(new AssemblyName(typeof(QuotesController).Namespace))); // because TestServer bug when controller in other project;
+
+            // DI of quote providers
+            services.AddTransient<IQuoteProvider, CryptonatorQuoteProvider>();
+            services.AddTransient<IQuoteProvider, CryptoCompareQuoteProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "koincentrator V1");
+            });
+
             app.UseMvc();
         }
     }

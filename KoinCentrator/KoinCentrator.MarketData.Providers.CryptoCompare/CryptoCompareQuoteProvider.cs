@@ -7,7 +7,7 @@ namespace KoinCentrator.MarketData.Providers.CryptoCompare
 {
     public class CryptoCompareQuoteProvider : IQuoteProvider
     {
-        public string Id { get; set; }
+        public string Id => "CryptoCompare";
 
         public Task<Quote> GetQuoteAsync(string symbol)
         {

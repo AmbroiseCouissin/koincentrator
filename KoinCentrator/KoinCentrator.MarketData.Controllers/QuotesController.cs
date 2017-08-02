@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace KoinCentrator.MarketData.Controllers
 {
     [Route("api/[controller]")]
-    public class QuotesController
+    public class QuotesController : Controller
     {
         private readonly IEnumerable<IQuoteProvider> _quoteProviders;
 

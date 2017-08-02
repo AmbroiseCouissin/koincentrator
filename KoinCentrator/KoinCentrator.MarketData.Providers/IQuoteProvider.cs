@@ -6,7 +6,7 @@ namespace KoinCentrator.MarketData.Providers
 {
     public interface IQuoteProvider
     {
-        string Id { get; set; }
+        string Id { get; }
         Task<Quote> GetQuoteAsync(string symbol);
         Task<IEnumerable<Quote>> GetQuotesAsync(IEnumerable<string> symbols);
     }
