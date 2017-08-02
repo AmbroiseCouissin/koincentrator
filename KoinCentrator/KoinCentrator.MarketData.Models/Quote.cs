@@ -5,7 +5,7 @@ namespace KoinCentrator.MarketData.Models
     public class Quote
     {
         public string Symbol { get; set; }
-        public ExchangeId ExchangeId { get; set; }
+        public string ExchangeId { get; set; }
         public string TargetSymbol { get; set; }
         public decimal Bid { get; set; }
         public decimal Ask { get; set; }

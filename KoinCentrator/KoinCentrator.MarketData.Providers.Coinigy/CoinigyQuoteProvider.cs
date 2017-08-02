@@ -53,7 +53,7 @@ namespace KoinCentrator.MarketData.Providers.Coinigy
                 {
                     Ask = q.ask,
                     Bid = q.bid,
-                    ExchangeId = Enum.Parse<ExchangeId>(q.exchange),
+                    ExchangeId = q.exchange,
                     LastUpdated = q.timestamp,
                     Symbol = q.market.Split('/')[0],
                     TargetSymbol = q.market.Split('/')[1],

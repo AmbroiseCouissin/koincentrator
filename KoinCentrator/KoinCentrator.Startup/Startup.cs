@@ -40,6 +40,9 @@ namespace KoinCentrator.Startup
             services.AddTransient<IQuoteProvider, CryptonatorQuoteProvider>();
             services.AddTransient<IQuoteProvider, CryptoCompareQuoteProvider>();
             services.AddTransient<IQuoteProvider, CoinigyQuoteProvider>();
+
+            // DI of exchange data providers
+            services.AddTransient<IExchangeDataProvider, CoinigyExchangeDataProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
