@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0-preview2-final" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KoinCentrator.MarketData.Controllers\KoinCentrator.MarketData.Controllers.csproj" />
+    <ProjectReference Include="..\KoinCentrator.MarketData.Models\KoinCentrator.MarketData.Models.csproj" />
+    <ProjectReference Include="..\KoinCentrator.MarketData.Providers.CryptoCompare\KoinCentrator.MarketData.Providers.CryptoCompare.csproj" />
+    <ProjectReference Include="..\KoinCentrator.MarketData.Providers.Cryptonator\KoinCentrator.MarketData.Providers.Cryptonator.csproj" />
+    <ProjectReference Include="..\KoinCentrator.MarketData.Providers\KoinCentrator.MarketData.Providers.csproj" />
+  </ItemGroup>
+
+</Project>

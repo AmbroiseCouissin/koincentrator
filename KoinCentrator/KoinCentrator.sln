@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoinCentrator.Hosts.WebApp", "KoinCentrator.Hosts.WebApp\KoinCentrator.Hosts.WebApp.csproj", "{67C56A54-BC3C-4261-B616-8E8281C5F4F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoinCentrator.MarketData.Controllers", "KoinCentrator.MarketData.Controllers\KoinCentrator.MarketData.Controllers.csproj", "{B240F92F-2E33-483A-97E2-A7DDE5A83F26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoinCentrator.MarketData.Models", "KoinCentrator.MarketData.Models\KoinCentrator.MarketData.Models.csproj", "{32043A45-B701-4C62-9310-E4EB252189BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoinCentrator.MarketData.ViewModels", "KoinCentrator.MarketData.ViewModels\KoinCentrator.MarketData.ViewModels.csproj", "{4D7D664E-02C5-4A91-91C6-BE63278FD59D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoinCentrator.MarketData.Sdk", "KoinCentrator.MarketData.Sdk\KoinCentrator.MarketData.Sdk.csproj", "{5FDD9BF1-86A2-4B2C-8764-733454FD4F2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoinCentrator.MarketData.Providers", "KoinCentrator.MarketData.Providers\KoinCentrator.MarketData.Providers.csproj", "{42256250-5283-4DEE-A867-3B504830287E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoinCentrator.MarketData.Providers.Cryptonator", "KoinCentrator.MarketData.Providers.Cryptonator\KoinCentrator.MarketData.Providers.Cryptonator.csproj", "{E6FA7976-0E4C-4CBC-8FAF-78468D47BEE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoinCentrator.MarketData.Providers.CryptoCompare", "KoinCentrator.MarketData.Providers.CryptoCompare\KoinCentrator.MarketData.Providers.CryptoCompare.csproj", "{DBA53045-8B55-43A7-839A-F5B68FD55E91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoinCentrator.Startup", "KoinCentrator.Startup\KoinCentrator.Startup.csproj", "{A38D3326-B025-4FE8-AC78-941E965F2A6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67C56A54-BC3C-4261-B616-8E8281C5F4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C56A54-BC3C-4261-B616-8E8281C5F4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C56A54-BC3C-4261-B616-8E8281C5F4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C56A54-BC3C-4261-B616-8E8281C5F4F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B240F92F-2E33-483A-97E2-A7DDE5A83F26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B240F92F-2E33-483A-97E2-A7DDE5A83F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B240F92F-2E33-483A-97E2-A7DDE5A83F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B240F92F-2E33-483A-97E2-A7DDE5A83F26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32043A45-B701-4C62-9310-E4EB252189BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32043A45-B701-4C62-9310-E4EB252189BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32043A45-B701-4C62-9310-E4EB252189BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32043A45-B701-4C62-9310-E4EB252189BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D7D664E-02C5-4A91-91C6-BE63278FD59D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D7D664E-02C5-4A91-91C6-BE63278FD59D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D7D664E-02C5-4A91-91C6-BE63278FD59D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D7D664E-02C5-4A91-91C6-BE63278FD59D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FDD9BF1-86A2-4B2C-8764-733454FD4F2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FDD9BF1-86A2-4B2C-8764-733454FD4F2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FDD9BF1-86A2-4B2C-8764-733454FD4F2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FDD9BF1-86A2-4B2C-8764-733454FD4F2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42256250-5283-4DEE-A867-3B504830287E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42256250-5283-4DEE-A867-3B504830287E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42256250-5283-4DEE-A867-3B504830287E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42256250-5283-4DEE-A867-3B504830287E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6FA7976-0E4C-4CBC-8FAF-78468D47BEE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6FA7976-0E4C-4CBC-8FAF-78468D47BEE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6FA7976-0E4C-4CBC-8FAF-78468D47BEE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6FA7976-0E4C-4CBC-8FAF-78468D47BEE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBA53045-8B55-43A7-839A-F5B68FD55E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBA53045-8B55-43A7-839A-F5B68FD55E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBA53045-8B55-43A7-839A-F5B68FD55E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBA53045-8B55-43A7-839A-F5B68FD55E91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A38D3326-B025-4FE8-AC78-941E965F2A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38D3326-B025-4FE8-AC78-941E965F2A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38D3326-B025-4FE8-AC78-941E965F2A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38D3326-B025-4FE8-AC78-941E965F2A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99C8F6F6-3D15-4C36-9129-3EDE81C840D5}
+	EndGlobalSection
+EndGlobal

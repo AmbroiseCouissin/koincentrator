@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KoinCentrator.MarketData.Models\KoinCentrator.MarketData.Models.csproj" />
+    <ProjectReference Include="..\KoinCentrator.MarketData.Providers\KoinCentrator.MarketData.Providers.csproj" />
+  </ItemGroup>
+
+</Project>
