@@ -12,9 +12,11 @@
   <ItemGroup>
     <ProjectReference Include="..\KoinCentrator.MarketData.Controllers\KoinCentrator.MarketData.Controllers.csproj" />
     <ProjectReference Include="..\KoinCentrator.MarketData.Models\KoinCentrator.MarketData.Models.csproj" />
+    <ProjectReference Include="..\KoinCentrator.MarketData.Providers.Coinigy\KoinCentrator.MarketData.Providers.Coinigy.csproj" />
     <ProjectReference Include="..\KoinCentrator.MarketData.Providers.CryptoCompare\KoinCentrator.MarketData.Providers.CryptoCompare.csproj" />
     <ProjectReference Include="..\KoinCentrator.MarketData.Providers.Cryptonator\KoinCentrator.MarketData.Providers.Cryptonator.csproj" />
     <ProjectReference Include="..\KoinCentrator.MarketData.Providers\KoinCentrator.MarketData.Providers.csproj" />
+    <ProjectReference Include="..\KoinCentrator.Tools.Web\KoinCentrator.Tools.Web.csproj" />
   </ItemGroup>
 
 </Project>

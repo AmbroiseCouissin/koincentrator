@@ -14,6 +14,8 @@ using KoinCentrator.MarketData.Providers.CryptoCompare;
 using System.Reflection;
 using KoinCentrator.MarketData.Controllers;
 using Swashbuckle.AspNetCore.Swagger;
+using KoinCentrator.Tools.Web;
+using KoinCentrator.MarketData.Providers.Coinigy;
 
 namespace KoinCentrator.Startup
 {
@@ -27,12 +29,17 @@ namespace KoinCentrator.Startup
                 c.SwaggerDoc("v1", new Info { Title = "koincentrator", Version = "v1" });
             });
 
-            services.AddMvc()
+            services
+                .AddMvc(o =>
+                {
+                    o.Conventions.Add(new CommaSeparatedQueryStringConvention());
+                })
                 .AddApplicationPart(Assembly.Load(new AssemblyName(typeof(QuotesController).Namespace))); // because TestServer bug when controller in other project;
 
             // DI of quote providers
             services.AddTransient<IQuoteProvider, CryptonatorQuoteProvider>();
             services.AddTransient<IQuoteProvider, CryptoCompareQuoteProvider>();
+            services.AddTransient<IQuoteProvider, CoinigyQuoteProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

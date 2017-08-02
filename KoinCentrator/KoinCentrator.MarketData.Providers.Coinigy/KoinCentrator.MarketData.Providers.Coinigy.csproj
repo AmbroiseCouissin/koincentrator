@@ -5,14 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0-preview2-final" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\KoinCentrator.MarketData.Models\KoinCentrator.MarketData.Models.csproj" />
     <ProjectReference Include="..\KoinCentrator.MarketData.Providers\KoinCentrator.MarketData.Providers.csproj" />
-    <ProjectReference Include="..\KoinCentrator.MarketData.ViewModels\KoinCentrator.MarketData.ViewModels.csproj" />
-    <ProjectReference Include="..\KoinCentrator.Tools.Web\KoinCentrator.Tools.Web.csproj" />
   </ItemGroup>
 
 </Project>

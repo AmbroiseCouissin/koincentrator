@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using KoinCentrator.MarketData.Models;
+using System.Linq;
 
 namespace KoinCentrator.MarketData.Providers.CryptoCompare
 {
@@ -9,14 +10,12 @@ namespace KoinCentrator.MarketData.Providers.CryptoCompare
     {
         public string Id => "CryptoCompare";
 
-        public Task<Quote> GetQuoteAsync(string symbol)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<Quote> GetQuoteAsync(string symbol, string targetSymbol) =>
+            (await GetQuotesAsync(new[] { symbol }, targetSymbol)).SingleOrDefault();
 
-        public Task<IEnumerable<Quote>> GetQuotesAsync(IEnumerable<string> symbols)
+        public Task<IEnumerable<Quote>> GetQuotesAsync(IEnumerable<string> symbols, string targetSymbol)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(Enumerable.Empty<Quote>());
         }
     }
 }

@@ -10,6 +10,7 @@ All experiments will have a set of SDKs.
 ## MARKET DATA
 throw new NotImplementedException();
 
+- [x] integration with Coinigy
 - [ ] integration with Cryptonator
 - [ ] integration with CryptoCompare
 

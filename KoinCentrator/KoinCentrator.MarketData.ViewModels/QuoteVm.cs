@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace KoinCentrator.MarketData.Models
+namespace KoinCentrator.MarketData.ViewModels
 {
-    public class Quote
+    public class QuoteVm
     {
         public string Symbol { get; set; }
-        public ExchangeId ExchangeId { get; set; }
+        public string ExchangeId { get; set; }
         public string TargetSymbol { get; set; }
         public decimal Bid { get; set; }
         public decimal Ask { get; set; }

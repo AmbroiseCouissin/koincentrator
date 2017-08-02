@@ -8,6 +8,6 @@
 
     public enum ExchangeId
     {
-
+        GDAX
     }
 }
