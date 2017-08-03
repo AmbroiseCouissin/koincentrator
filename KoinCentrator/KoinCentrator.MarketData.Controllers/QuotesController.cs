@@ -1,5 +1,4 @@
-﻿using KoinCentrator.MarketData.Models;
-using KoinCentrator.MarketData.Providers;
+﻿using KoinCentrator.MarketData.Providers;
 using KoinCentrator.MarketData.ViewModels;
 using KoinCentrator.Tools.Web;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +20,7 @@ namespace KoinCentrator.MarketData.Controllers
 
         [HttpGet]
         [Route("latest")]
+        [ProducesResponseType(typeof(IEnumerable<QuoteVm>), 200)]
         public async Task<IActionResult> GetQuotesAsync([CommaSeparated]IEnumerable<string> commaSeparatedSymbols, string targetSymbol) =>
             Ok((await Task.WhenAll(_quoteProviders.Select(qp => qp.GetQuotesAsync(commaSeparatedSymbols, targetSymbol))))
                 .SelectMany(q => q)
@@ -41,5 +41,17 @@ namespace KoinCentrator.MarketData.Controllers
                     Last = q.Last
                 })
             );
+
+        [HttpGet]
+        [Route("pairs")]
+        [ProducesResponseType(typeof(IEnumerable<CurrencyPairVm>), 200)]
+        public async Task<IActionResult> GetAllCurrencyPairs() // Todo
+        {
+            // This should be the main api used for arbitrage.
+            // We could try to get all the currency pairs from different exchanges
+            // and act upon them to trade/exchange with very limited risk,
+            // based on liquidity factor (volume, spread...)
+            return Ok(Enumerable.Empty<CurrencyPairVm>());
+        }
     }
 }

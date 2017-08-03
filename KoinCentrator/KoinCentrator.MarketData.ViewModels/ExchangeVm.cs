@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace KoinCentrator.MarketData.Models
+namespace KoinCentrator.MarketData.ViewModels
 {
-    public class Exchange
+    public class ExchangeVm
     {
         public string Id { get; set; }
         public string Name { get; set; }

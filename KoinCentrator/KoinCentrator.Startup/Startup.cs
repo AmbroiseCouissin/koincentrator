@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using KoinCentrator.MarketData.Providers;
 using KoinCentrator.MarketData.Providers.Cryptonator;
 using KoinCentrator.MarketData.Providers.CryptoCompare;
-using System.Reflection;
-using KoinCentrator.MarketData.Controllers;
 using Swashbuckle.AspNetCore.Swagger;
 using KoinCentrator.Tools.Web;
 using KoinCentrator.MarketData.Providers.Coinigy;
+using KoinCentrator.MarketData.Controllers;
+using System.Reflection;
 
 namespace KoinCentrator.Startup
 {
@@ -26,7 +20,25 @@ namespace KoinCentrator.Startup
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "koincentrator", Version = "v1" });
+                c.SwaggerDoc(
+                    "v1",
+                    new Info
+                    {
+                        Title = "KoinCentrator",
+                        Version = "v1",
+                        Contact = new Contact
+                        {
+                            Email = "ambroise.couissin@gmail.com",
+                            Name = "Ambroise Couissin",
+                            Url = "https://github.com/AmbroiseCouissin/koincentrator"
+                        }, 
+                        Description = "Just a little experience of a crypto-currency data aggregator and maybe trading models later.",
+                        License = new License
+                        {
+                            Name = "MIT License",
+                            Url = "https://github.com/AmbroiseCouissin/koincentrator/blob/master/LICENSE"
+                        },
+                    });
             });
 
             services
@@ -52,7 +64,7 @@ namespace KoinCentrator.Startup
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "koincentrator V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "KoinCentrator V1");
             });
 
             app.UseMvc();

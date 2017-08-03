@@ -1,9 +1,9 @@
 ﻿using KoinCentrator.MarketData.Providers;
+using KoinCentrator.MarketData.ViewModels;
 using KoinCentrator.Tools.Web;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace KoinCentrator.MarketData.Controllers
@@ -18,17 +18,35 @@ namespace KoinCentrator.MarketData.Controllers
             _coinDataProviders = coinDataProviders;
         }
 
-        //[HttpGet]
-        //[Route("all")]
-        //public async Task<IActionResult> GetAllCoinsAsync()
-        //{
+        [HttpGet]
+        [Route("all")]
+        [ProducesResponseType(typeof(IEnumerable<CoinVm>), 200)]
+        public async Task<IActionResult> GetAllCoinsAsync() =>
+            Ok((await Task.WhenAll(_coinDataProviders.Select(cdp => cdp.GetAllCoinDatasAsync())))
+                .SelectMany(e => e)
+                .Select(c => new CoinVm
+                {
+                    Algorithm = c.Algorithm,
+                    ImageUrl = c.ImageUrl,
+                    Name = c.Name,
+                    ProofType = c.ProofType,
+                    SupportedExchangeIds = c.SupportedExchangeIds,
+                    Symbol = c.Symbol
+                }));
 
-        //}
-
-        //[HttpGet]
-        //public async Task<IActionResult> GetAllCoinsAsync([CommaSeparated]IEnumerable<string> commaSeparatedSymbols)
-        //{
-
-        //}
+        [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<CoinVm>), 200)]
+        public async Task<IActionResult> GetCoinsAsync([CommaSeparated]IEnumerable<string> commaSeparatedExchangeIds) =>
+            Ok((await Task.WhenAll(_coinDataProviders.Select(cdp => cdp.GetCoinDatasAsync(commaSeparatedExchangeIds))))
+                .SelectMany(e => e)
+                .Select(c => new CoinVm
+                {
+                    Algorithm = c.Algorithm,
+                    ImageUrl = c.ImageUrl,
+                    Name = c.Name,
+                    ProofType = c.ProofType,
+                    SupportedExchangeIds = c.SupportedExchangeIds,
+                    Symbol = c.Symbol
+                }));
     }
 }

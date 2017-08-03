@@ -25,7 +25,7 @@ namespace KoinCentrator.MarketData.Providers.Coinigy
         private const string apiKey = "6744e89f96308560f548ad1d8eecd478";
         private const string apiSecret = "5f03cfb4b8a196c636ffa2c2807a9ace";
 
-        public string Id => "coinigy";
+        public string Id => "Coinigy";
 
         public async Task<IEnumerable<Exchange>> GetAllExchangeDatasAsync()
         {
