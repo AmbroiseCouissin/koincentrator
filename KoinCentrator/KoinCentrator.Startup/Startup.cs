@@ -55,6 +55,10 @@ namespace KoinCentrator.Startup
 
             // DI of exchange data providers
             services.AddTransient<IExchangeDataProvider, CoinigyExchangeDataProvider>();
+
+            // DI of coin data providers
+            services.AddTransient<ICoinDataProvider, CoinigyCoinDataProvider>();
+            services.AddTransient<ICoinDataProvider, CryptoCompareCoinDataProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

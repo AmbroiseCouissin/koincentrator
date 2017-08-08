@@ -31,9 +31,7 @@ namespace KoinCentrator.Tools.Web
             var result = base.GetValue(key);
 
             if (_key != null && _key != key)
-            {
                 return result;
-            }
 
             if (result != ValueProviderResult.None && result.Values.Any(x => x.IndexOf(_separator, StringComparison.OrdinalIgnoreCase) > 0))
             {

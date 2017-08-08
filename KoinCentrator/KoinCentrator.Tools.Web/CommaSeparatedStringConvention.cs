@@ -7,13 +7,9 @@ namespace KoinCentrator.Tools.Web
     {
         public void Apply(ActionModel action)
         {
-            foreach (var parameter in action.Parameters)
-            {
+            foreach (ParameterModel parameter in action.Parameters)
                 if (parameter.Attributes.OfType<CommaSeparatedAttribute>().Any() && !parameter.Action.Filters.OfType<SeparatedQueryStringAttribute>().Any())
-                {
                     parameter.Action.Filters.Add(new SeparatedQueryStringAttribute(parameter.ParameterName, ","));
-                }
-            }
         }
     }
 }

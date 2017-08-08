@@ -12,10 +12,12 @@ namespace KoinCentrator.MarketData.Controllers
     public class QuotesController : Controller
     {
         private readonly IEnumerable<IQuoteProvider> _quoteProviders;
+        private readonly IEnumerable<IExchangeDataProvider> _exchangeDataProviders;
 
-        public QuotesController(IEnumerable<IQuoteProvider> quoteProviders)
+        public QuotesController(IEnumerable<IQuoteProvider> quoteProviders, IEnumerable<IExchangeDataProvider> exchangeDataProviders)
         {
             _quoteProviders = quoteProviders;
+            _exchangeDataProviders = exchangeDataProviders;
         }
 
         [HttpGet]
@@ -36,8 +38,8 @@ namespace KoinCentrator.MarketData.Controllers
                     Symbol = q.Symbol,
                     TargetSymbol = q.TargetSymbol,
                     Volume = q.Volume,
-                    High = q.High,
-                    Low = q.Low,
+                    High = q.High24h,
+                    Low = q.Low24h,
                     Last = q.Last
                 })
             );
@@ -51,6 +53,9 @@ namespace KoinCentrator.MarketData.Controllers
             // We could try to get all the currency pairs from different exchanges
             // and act upon them to trade/exchange with very limited risk,
             // based on liquidity factor (volume, spread...)
+
+            // First get all the potential currency pairs
+
             return Ok(Enumerable.Empty<CurrencyPairVm>());
         }
     }

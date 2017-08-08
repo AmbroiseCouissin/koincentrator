@@ -9,8 +9,8 @@ namespace KoinCentrator.MarketData.Models
         public string TargetSymbol { get; set; }
         public decimal Bid { get; set; }
         public decimal Ask { get; set; }
-        public decimal High { get; set; }
-        public decimal Low { get; set; }
+        public decimal High24h { get; set; }
+        public decimal Low24h { get; set; }
         public decimal Last { get; set; }
         public decimal Volume { get; set; }
         public DateTime LastUpdated { get; set; }

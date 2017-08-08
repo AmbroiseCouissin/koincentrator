@@ -58,8 +58,8 @@ namespace KoinCentrator.MarketData.Providers.Coinigy
                     Symbol = q.market.Split('/')[0],
                     TargetSymbol = q.market.Split('/')[1],
                     Volume = q.current_volume,
-                    High = q.high_trade,
-                    Low = q.low_trade,
+                    High24h = q.high_trade,
+                    Low24h = q.low_trade,
                     Last = q.last_trade
                 });
         }
